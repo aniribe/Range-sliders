@@ -2,10 +2,16 @@
   padding: 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  margin: 0;
 }
 
 body {
+  height: 100vh;
   background: #cdcdcd;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input[type="range"] {
@@ -13,6 +19,7 @@ input[type="range"] {
   appearance: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -20,106 +27,11 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
 }
 
-.slider-container {
-  position: relative;
-  width: 32rem;
+.container {
+  height: 70%;
   display: flex;
-  justify-content: center;
-}
-
-.slider1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32rem;
-  height: 2.5rem;
-  border: 1rem solid transparent;
-  border-radius: 0.25rem;
-  /* color: #262626;
-  font-size: 1rem; */
-  cursor: pointer;
-}
-
-.main-fill {
-  position: absolute;
-  width: 90%;
-  height: 2.2rem;
-  top: 5px;
-  border-radius: 1.25rem;
-  background: linear-gradient(#1c1c1c, #333333) content-box;
-}
-
-.fill {
-  position: absolute;
-  width: 0%;
-  height: 90%;
-  border-radius: 1.25rem;
-  background: linear-gradient(#e38928, #c17102) no-repeat content-box;
-}
-
-.slider1::-webkit-slider-runnable-track {
-  background: transparent;
-  padding: 0.75rem;
-  width: 32rem;
-  height: 2.5rem;
-  border-radius: 1.25rem;
-  box-shadow: inset 0 1px 0.125rem #a3a3a3, inset 0 -1px 0.125rem #f1f1f1,
-    inset 0 0 0 0.75rem #c1c1c1;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.slider1::-moz-range-track {
-  padding: 0.75rem;
-  width: 28.5rem;
-  height: 1rem;
-  border-radius: 1.25rem;
-  box-shadow: inset 0 1px 0.125rem #a3a3a3, inset 0 -1px 0.125rem #f1f1f1,
-    inset 0 0 0 0.75rem #c1c1c1;
-}
-
-.slider1::-ms-track {
-  padding: 0.75rem;
-  width: 28.5rem;
-  height: 1rem;
-  border-radius: 1.25rem;
-  box-shadow: inset 0 1px 0.125rem #a3a3a3, inset 0 -1px 0.125rem #f1f1f1,
-    inset 0 0 0 0.75rem #c1c1c1;
-}
-
-.slider1::-webkit-slider-thumb {
-  position: relative;
-  margin-top: -0.5rem;
-  border: none;
-  padding: 0.75rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: radial-gradient(#db7e0d 35%, #cb8037 71%) content-box,
-    linear-gradient(#d4d4d4, #bfbfbf) border-box;
-  box-shadow: 0 1px 0.125rem #585858, inset 0 1px 1px #f8f8f8;
-}
-
-.slider1::-moz-range-thumb {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: none;
-  border-radius: 50%;
-  padding: 0.75rem;
-  background: radial-gradient(#db7e0d 35%, #cb8037 71%) content-box,
-    linear-gradient(#d4d4d4, #bfbfbf) border-box;
-  box-shadow: 0 1px 0.125rem #585858, inset 0 1px 1px #f8f8f8;
-}
-
-.slider1::-ms-thumb {
-  width: 1rem;
-  height: 1rem;
-  border: none;
-  border-radius: 50%;
-  padding: 0.75rem;
-  background: radial-gradient(#db7e0d 35%, #cb8037 71%) content-box,
-    linear-gradient(#d4d4d4, #bfbfbf) border-box;
-  box-shadow: 0 1px 0.125rem #585858, inset 0 1px 1px #f8f8f8;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /** Slider 2
@@ -129,7 +41,6 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   width: 31rem;
   height: 2.5rem;
-  /* margin-top: 5rem; */
   border-radius: 1.25rem;
   box-shadow: inset 0 1px 0.125rem #9b9b9b, inset 0 -1px 0.125rem #e7e7e7,
     inset 0 0 0 0.8rem #c1c1c1, inset 0 -1px 0.125rem #696969;
@@ -202,8 +113,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 .slider-container3 .slider3 {
   position: absolute;
-  top: 0.3rem;
-  left: 0.28rem;
+  top: 0.45rem;
+  left: 0.4rem;
   width: 97%;
   height: calc(2.5rem - 0.85rem);
   border-radius: 1.125rem;
@@ -264,17 +175,137 @@ input[type="range"]::-webkit-slider-thumb {
 /** Slider 5
 ***************/
 
-.slider-container5 .slider5 {
+.slider-container5 {
+  position: relative;
   margin-top: 2rem;
-  padding: 0 0.53rem;
-  width: 17rem;
-  height: 1.875rem;
+  width: 32rem;
+  height: 1.75rem;
+  padding: 1.5rem;
   box-shadow: 0 -1px 0.125rem #fff, 0 0.875rem 0.75rem -0.875rem #000;
-  background: linear-gradient(rgba(#e5e5e5, 0.5), rgba(#ccc, 0.5)) no-repeat
-      100% 50%,
-    linear-gradient(#9c9c9c, #9c9c9c) no-repeat 50% 50%,
-    radial-gradient(circle, #aaa, #9c9c9c 0.1875em, transparent 0.25em)
+  background: repeating-linear-gradient(
+        90deg,
+        #868686,
+        #9c9c9c 2px,
+        transparent 2px,
+        transparent 4rem
+      )
+      no-repeat 50%/90%,
+    linear-gradient(
+        0deg,
+        transparent,
+        transparent 23px,
+        #868686 23px,
+        #868686 25px,
+        transparent 25px,
+        transparent 2rem
+      )
+      no-repeat 25px 50%/88%,
+    radial-gradient(
+        circle,
+        #aaa,
+        #868686 5px,
+        transparent 5px,
+        transparent 5rem
+      )
+      59.5px 50%/12.48%;
+}
+
+.slider-container5 .slider5 {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(235, 19, 3, 0.8), rgba(179, 15, 3, 0.8))
+    no-repeat 0% / 0%;
+}
+
+.slider-container5 .slider5::-webkit-slider-thumb {
+  position: relative;
+  width: 3.5rem;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(#ffffff, #bdbdbd);
+  box-shadow: 1px 2px 10px 0px #686868, 0 2px 5px -5px rgba(58, 58, 58, 0.7);
+}
+
+.slider-container5 .slider5::-moz-range-thumb {
+  position: relative;
+  width: 3.5rem;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(#ffffff, #bdbdbd);
+  box-shadow: 1px 2px 10px 0px #686868, 0 2px 5px -5px rgba(58, 58, 58, 0.7);
+}
+
+/** Slider 6
+***************/
+
+.slider-container6 {
+  position: relative;
+  margin-top: 2rem;
+  width: 32rem;
+  height: 1.75rem;
+  padding: 1.5rem;
+  background: repeating-linear-gradient(
+        90deg,
+        #666666,
+        #666666 2px,
+        #dddddd 2px,
+        #dddddd 4px,
+        transparent 4px,
+        transparent 5rem
+      )
+      no-repeat 50% 50%,
+    repeating-linear-gradient(
+        90deg,
+        #505050,
+        #505050 1px,
+        #dddddd 1px,
+        #dddddd 3px,
+        transparent 3px,
+        transparent 0.5rem
+      )
+      no-repeat 50% 50%;
+  background-size: 30.5rem 80%, 30.5rem 60%;
+  box-shadow: 0 -1px 2px #fff, 0px 13px 23px -14px #3a3a3a, 0 -2px 5px #c5c5c5;
+}
+
+.slider-container6 .slider6 {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  top: calc(1.75rem - 0.85rem);
+  left: 0;
+  border-radius: 1.5rem;
+  background: linear-gradient(rgba(3, 181, 235, 0.8), rgba(3, 137, 179, 0.8))
+    no-repeat 0% /0%;
+}
+
+.slider-container6 .slider6::-webkit-slider-thumb {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  padding: 0.75rem;
+  background: radial-gradient(rgb(4, 173, 224) 30%, rgb(4, 156, 202) 70%)
       content-box,
-    linear-gradient(-90deg, #9c9c9c 1px, transparent 1px) repeat-x 0.53rem
-      content-box;
+    linear-gradient(rgb(228, 228, 228), rgb(185, 185, 185)) border-box;
+  box-shadow: 0 10px 8px -5px rgb(100, 100, 100),
+    3px 2px 10px rgb(196, 196, 196), 0 -1px 2px rgb(187, 187, 187),
+    3px 0 15px rgb(158, 158, 158), 3px 2px 7px rgb(189, 189, 189),
+    inset 0 1px 2px #fff;
+}
+
+.slider-container6 .slider6::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  padding: 0.75rem;
+  background: radial-gradient(rgb(4, 173, 224) 30%, rgb(4, 156, 202) 70%)
+      content-box,
+    linear-gradient(rgb(228, 228, 228), rgb(185, 185, 185)) border-box;
+  box-shadow: 0 10px 8px -5px rgb(100, 100, 100),
+    3px 2px 10px rgb(196, 196, 196), 0 -1px 2px rgb(187, 187, 187),
+    3px 0 15px rgb(158, 158, 158), 3px 2px 7px rgb(189, 189, 189),
+    inset 0 1px 2px #fff;
 }
